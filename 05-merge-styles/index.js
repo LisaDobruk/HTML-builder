@@ -13,7 +13,7 @@ const mergeFiles = async()=>{
             const pathFile = path.join(styleFolder, file.name);
            
             let ext = path.extname(file.name);
-            if(file.isFile && ext == ".css"){
+            if(file.isFile() && ext == ".css"){
                 const data = await fs.readFile(pathFile, 'utf-8');
                 arrStyle.push(data);
             }
